@@ -1,24 +1,162 @@
 import { Link } from "react-router-dom";
 import Logo from '../../assets/logo.png'
+import { useEffect, useState } from "react";
+import { useTheme } from "../../context/ThemeContext";
 
-const Portifolio = () =>{
-    return(
-        <div>
-            <header>
-                <div>
-                    <div>
-                        <Link to="#">
-                            <img src={Logo} alt="Logo" />
-                        </Link>
-                    </div>
-                    <nav>
-                        <Link to="#">Projetos</Link>
-                        <Link to="#">Sobre</Link>
-                        <Link to="#">Skills</Link>
-                        <Link to="#">Contato</Link>
-                    </nav>
-                </div>
-            </header>
+const Portifolio = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const { theme, toggleTheme } = useTheme();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      window.scrollTo({
+        top: element.offsetTop - 80,
+        behavior: 'smooth'
+      });
+    }
+    setMobileMenuOpen(false);
+  };
+
+    return (
+        <div className="min-h-screen w-full">
+                  <header 
+        className={`fixed top-0 left-0 w-full z-50 py-4 transition-all duration-300 ${
+          scrolled 
+            ? 'border-b backdrop-blur-sm' 
+            : 'border-b border-transparent'
+        }`}
+        style={{ 
+          borderColor: scrolled ? 'var(--border)' : 'transparent',
+          backgroundColor: scrolled 
+            ? theme === 'light' 
+              ? 'rgba(255, 255, 255, 0.95)' 
+              : 'rgba(13, 13, 13, 0.95)'
+            : 'transparent',
+          boxShadow: scrolled ? 'var(--shadow-sm)' : 'none'
+        }}
+      >
+        <div className="w-full px-6 lg:px-12 xl:px-20">
+          <div className="flex justify-between items-center">
+            <Link 
+              to="#" 
+              className="text-xl font-bold"
+              style={{ color: 'var(--primary)' }}
+            >
+                <img src={Logo} alt="Logo" />
+            </Link>
+            
+            {/* Mobile Menu */}
+            <button 
+              className="md:hidden flex flex-col gap-1 w-6 h-6"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              <span 
+                className={`w-full h-0.5 transition-all duration-150 ${
+                  mobileMenuOpen ? 'transform rotate-45 translate-y-1.5' : ''
+                }`}
+                style={{ backgroundColor: 'var(--text-primary)' }}
+              />
+              <span 
+                className={`w-full h-0.5 transition-all duration-150 ${
+                  mobileMenuOpen ? 'opacity-0' : ''
+                }`}
+                style={{ backgroundColor: 'var(--text-primary)' }}
+              />
+              <span 
+                className={`w-full h-0.5 transition-all duration-150 ${
+                  mobileMenuOpen ? 'transform -rotate-45 -translate-y-1.5' : ''
+                }`}
+                style={{ backgroundColor: 'var(--text-primary)' }}
+              />
+            </button>
+            
+            <nav 
+              className={`md:flex gap-8 ${
+                mobileMenuOpen ? 'flex' : 'hidden'
+              } fixed md:static top-16 left-0 w-full md:w-auto p-8 md:p-0 flex-col md:flex-row md:items-center transition-all duration-300 ${
+                mobileMenuOpen 
+                  ? 'translate-y-0 opacity-100 visible' 
+                  : 'md:translate-y-0 md:opacity-100 md:visible -translate-y-full opacity-0 invisible'
+              }`}
+              style={{ 
+                backgroundColor: 'var(--bg-primary)',
+                boxShadow: mobileMenuOpen ? 'var(--shadow-md)' : 'none',
+                borderBottom: mobileMenuOpen ? '1px solid var(--border)' : 'none'
+              }}
+            >
+              <Link 
+                to="#work" 
+                className="relative py-1 text-md transition-colors duration-300 hover:text-accent"
+                style={{ color: 'var(--text-secondary)' }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('work');
+                }}
+              >
+                Projetos
+              </Link>
+              <Link 
+                to="#about" 
+                className="relative py-1 text-md transition-colors duration-300 hover:text-accent"
+                style={{ color: 'var(--text-secondary)' }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('about');
+                }}
+              >
+                Sobre
+              </Link>
+              <Link 
+                to="#skills" 
+                className="relative py-1 text-md transition-colors duration-300 hover:text-accent"
+                style={{ color: 'var(--text-secondary)' }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('skills');
+                }}
+              >
+                Skills
+              </Link>
+              <Link 
+                to="#contact" 
+                className="relative py-1 text-md transition-colors duration-300 hover:text-accent"
+                style={{ color: 'var(--text-secondary)' }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('contact');
+                }}
+              >
+                Contato
+              </Link>
+            </nav>
+            
+            <div className="hidden md:flex items-center gap-4">
+              <button 
+                className="w-10 h-10 flex items-center justify-center rounded-md border transition-all duration-150 hover:border-accent hover:text-accent"
+                style={{ 
+                  borderColor: 'var(--border)',
+                  color: 'var(--text-secondary)'
+                }}
+                onClick={toggleTheme}
+                aria-label="Alternar tema"
+              >
+                <span>{theme === 'dark' ? '☼' : '☾'}</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
         </div>
     )
 }
