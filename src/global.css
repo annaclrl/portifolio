@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import 'tailwindcss';
+
+@layer theme {
+    :root {
+        --white: #FFFFFF;
+        --gray-light: #EDEDED;
+        --blue-petroleum: #0A3D62;
+        --turquoise: #3DB2FF;
+        --blue-gray: #778CA3;
+
+        --primary: var(--blue-petroleum);
+        --secondary: var(--blue-gray);
+        --accent: var(--turquoise);
+        --bg-primary: var(--white);
+        --bg-secondary: var(--gray-light);
+        --text-primary: var(--blue-petroleum);
+        --text-secondary: var(--blue-gray);
+        --border: #D1D8E0;
+
+        --shadow-sm: 0 1px 3px rgba(10, 61, 98, 0.05);
+        --shadow-md: 0 4px 6px rgba(10, 61, 98, 0.07);
+        --shadow-lg: 0 10px 15px rgba(10, 61, 98, 0.08);
+    }
+
+    [data-theme='dark'] {
+
+        --black: #0D0D0D;
+        --gray-lead: #1C1C1C;
+        --gray-medium: #3D3D3D;
+        --ice-white: #F2F2F2;
+        --blue-highlight: #3F8CFF;
+
+        --primary: var(--ice-white);
+        --secondary: #A3A3A3;
+        --accent: var(--blue-highlight);
+        --bg-primary: var(--black);
+        --bg-secondary: var(--gray-lead);
+        --text-primary: var(--ice-white);
+        --text-secondary: #A3A3A3;
+        --border: var(--gray-medium);
+
+        --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+        --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+        --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
+
+        -fonte-principal: "Montserrat", sans-serif;
+    }
+}
+
+@layer base {
+    html {
+
+        @apply scroll-smooth antialiased;
+    }
+
+    body {
+        @apply overflow-x-hidden transition-colors duration-300 bg-[var(--bg-primary)] text-[var(--text-primary)] font-(--fonte-principal);
+    }
+}
