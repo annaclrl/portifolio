@@ -32,8 +32,8 @@ const Portifolio = () => {
     <div className="min-h-screen w-full">
       <header
         className={`fixed top-0 left-0 w-full z-50 py-4 transition-all duration-300 ${scrolled
-            ? 'border-b backdrop-blur-sm'
-            : 'border-b border-transparent'
+          ? 'border-b backdrop-blur-sm'
+          : 'border-b border-transparent'
           }`}
         style={{
           borderColor: scrolled ? 'var(--border)' : 'transparent',
@@ -153,34 +153,79 @@ const Portifolio = () => {
         </div>
       </header>
 
-      <section>
-        <div>
-          <div>
-            <div>
-              <img src={MinhaFoto} alt="Minha Foto" />
-              <span>Olá, eu sou</span>
-              <h1>
-                Anna Clara
-              </h1>
-              <p>
-                Sou uma desenvolvedora em início de carreira, com foco em criar soluções eficientes e funcionais por meio de código limpo, organizado e orientado a boas práticas. Busco unir lógica, design e experiência do usuário para entregar aplicações que realmente resolvem problemas.
-              </p>
-              <div>
-                <button>Ver Projetos</button>
-              </div>
-              <div>
-                <button>Contato</button>
-              </div>
-              <div>
-                  Role para explorar
+     <section className="pt-32 pb-20 min-h-screen flex items-center relative w-full">
+        <div className="w-full px-6 lg:px-12 xl:px-20">
+          <div className="w-full">
+            <div className="flex flex-col lg:flex-row items-start lg:items-center w-full gap-12">
+                <img
+                  src={MinhaFoto}
+                  alt="Minha Foto"
+                  className="rounded-full w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 object-cover"
+                />
+
+              <div className="lg:w-2/3 order-2 lg:order-2">
+                <span
+                  className="text-md mb-4 block "
+                  style={{ color: 'var(--accent)' }}
+                >
+                  Olá, eu sou
+                </span>
+
+                <h1
+                  className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6"
+                  style={{ color: 'var(--text-primary)' }}
+                >
+                  Anna Clara
+                </h1>
+
+                <p
+                  className="text-lg md:text-xl mb-10 max-w-4xl"
+                  style={{ color: 'var(--text-secondary)' }}
+                >
+                  Sou uma desenvolvedora em início de carreira, com foco em criar soluções eficientes e funcionais por meio de código limpo, organizado e orientado a boas práticas. Busco unir lógica, design e experiência do usuário para entregar aplicações que realmente resolvem problemas.
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-6">
+                  <button
+                    className="px-10 py-5 text-sm font-medium uppercase tracking-wider rounded-md border transition-all duration-150 hover:-translate-y-0.5 hover:shadow-lg"
+                    style={{
+                      backgroundColor: 'var(--accent)',
+                      color: 'white',
+                      borderColor: 'var(--accent)'
+                    }}
+                    onClick={() => scrollToSection('work')}
+                  >
+                    Ver Projetos
+                  </button>
+                  <button
+                    className="px-10 py-5 text-sm font-medium uppercase tracking-wider rounded-md border transition-all duration-150 hover:-translate-y-0.5 hover:border-accent hover:text-accent hover:shadow-lg"
+                    style={{
+                      borderColor: 'var(--border)',
+                      color: 'var(--text-primary)',
+                      backgroundColor: 'var(--bg-primary)',
+                    }}
+                    onClick={() => scrollToSection('contact')}
+                  >
+                    Contato
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
+
+        <div
+          className="scroll-hint absolute bottom-12 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 text-xs uppercase tracking-widest"
+          style={{ color: 'var(--text-secondary)' }}
+        >
+          Role para explorar
+          <div className="w-px h-10" style={{ backgroundColor: 'var(--accent)' }} />
+        </div>
       </section>
     </div>
-    
+
+
   )
-}
+};
 
 export default Portifolio;
