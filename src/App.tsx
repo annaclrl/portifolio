@@ -1,11 +1,12 @@
+import Portifolio from "./pages/Portifolio"
 
-function App() {
-
-
+const App = () => {
   return (
     <>
+      <Portifolio />
     </>
+    
   )
 }
 
-export default App
+export default App;
