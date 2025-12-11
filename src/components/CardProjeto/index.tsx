@@ -84,7 +84,6 @@ const CardProjeto = ({ project }: Props) => {
 
         </div>
       </div>
-
     </div>
   );
 };
