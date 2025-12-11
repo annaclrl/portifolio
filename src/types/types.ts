@@ -3,9 +3,12 @@ export interface ThemeContextType {
   toggleTheme: () => void;
 }
 
-export interface Project {
-  title: string;
-  description: string;
+export interface Projeto {
+  titulo: string;
+  descricao: string;
   tech: string[];
   imagem: string;
+  link: string;    
+  codigo: string;  
 }
+
