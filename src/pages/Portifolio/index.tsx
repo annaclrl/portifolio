@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { useTheme } from "../../context/ThemeContext";
 import CardProjeto from "../../components/CardProjeto";
 import { projetos } from "../../data/cardProjeto";
+import { experiences, experiencias } from "../../data/expericenica";
 
 const Portifolio = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -249,6 +250,47 @@ const Portifolio = () => {
             {projetos.map((projeto, index) => (
               <CardProjeto key={index} project={projeto} />
             ))}
+          </div>
+        </div>
+      </section>
+      <section>
+        <div>
+          <div>
+            <div>
+              <h2>Sobre Mim</h2>
+              <div>
+                <p>Sou estudante de Análise e Desenvolvimento de Sistemas. Encontrei na tecnologia um espaço onde posso unir raciocínio lógico, criatividade e a vontade de construir soluções que façam diferença. Atualmente, direciono meus estudos para o desenvolvimento fullstack, explorando tanto a construção das interfaces quanto a estrutura interna das aplicações.</p>
+                <p>Gosto de entender como cada camada de um sistema se conecta, do front-end, que entrega a experiência ao usuário, ao back-end, onde a lógica, os dados e a arquitetura tornam tudo possível. Por isso, venho estudando React, TypeScript, Java e bancos de dados, além de aprofundar conceitos de Programação Orientada a Objetos, modelagem e boas práticas de desenvolvimento.</p>
+                <p>Ao longo da minha jornada acadêmica, participei de projetos multidisciplinares que me permitiram atuar em diferentes partes do processo: prototipação, desenvolvimento, integração e análise. Cada novo projeto se torna uma oportunidade de evoluir tecnicamente, aprimorar meu código e entender melhor como criar soluções completas e bem estruturadas.</p>
+                <p>Sou uma pessoa organizada, curiosa e sempre em busca de crescimento. Prezo por clareza, propósito e qualidade em tudo que construo. Meu objetivo é me desenvolver cada vez mais como fullstack, unindo conhecimento técnico, lógica e criatividade para entregar aplicações úteis, eficientes e com impacto real.</p>
+              </div>
+              <div>
+                <h3>Linha do tempo</h3>
+                <div>
+                  {experiencias.map((exp, index) => (
+                    <div key={index} >
+                      <div
+                      />
+                      <div
+
+                      >
+                        {exp.data}
+                      </div>
+                      <h4
+
+                      >
+                        {exp.titulo}
+                      </h4>
+                      <p
+
+                      >
+                        {exp.descricao}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
