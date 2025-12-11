@@ -223,8 +223,6 @@ const Portifolio = () => {
         </div>
       </section>
     </div>
-
-
   )
 };
 
