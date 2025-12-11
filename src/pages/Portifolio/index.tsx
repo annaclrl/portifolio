@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { useTheme } from "../../context/ThemeContext";
 import CardProjeto from "../../components/CardProjeto";
 import { projetos } from "../../data/cardProjeto";
-import { experiences, experiencias } from "../../data/expericenica";
+import { experiencias } from "../../data/expericenica";
 
 const Portifolio = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -253,42 +253,72 @@ const Portifolio = () => {
           </div>
         </div>
       </section>
-      <section>
-        <div>
-          <div>
-            <div>
-              <h2>Sobre Mim</h2>
-              <div>
+      <section id="about" className="py-24 w-full">
+        <div className="w-full px-6 lg:px-12 xl:px-20">
+          <div className="flex flex-col lg:flex-row gap-16">
+            <div className="lg:w-2/3">
+              <h2 
+                className="text-4xl lg:text-5xl font-bold mb-8"
+                style={{ color: 'var(--primary)' }}
+              >
+                Sobre Mim
+              </h2>
+              
+              <div 
+                className="text-lg space-y-6"
+                style={{ color: 'var(--text-secondary)' }}
+              >
                 <p>Sou estudante de Análise e Desenvolvimento de Sistemas. Encontrei na tecnologia um espaço onde posso unir raciocínio lógico, criatividade e a vontade de construir soluções que façam diferença. Atualmente, direciono meus estudos para o desenvolvimento fullstack, explorando tanto a construção das interfaces quanto a estrutura interna das aplicações.</p>
                 <p>Gosto de entender como cada camada de um sistema se conecta, do front-end, que entrega a experiência ao usuário, ao back-end, onde a lógica, os dados e a arquitetura tornam tudo possível. Por isso, venho estudando React, TypeScript, Java e bancos de dados, além de aprofundar conceitos de Programação Orientada a Objetos, modelagem e boas práticas de desenvolvimento.</p>
                 <p>Ao longo da minha jornada acadêmica, participei de projetos multidisciplinares que me permitiram atuar em diferentes partes do processo: prototipação, desenvolvimento, integração e análise. Cada novo projeto se torna uma oportunidade de evoluir tecnicamente, aprimorar meu código e entender melhor como criar soluções completas e bem estruturadas.</p>
                 <p>Sou uma pessoa organizada, curiosa e sempre em busca de crescimento. Prezo por clareza, propósito e qualidade em tudo que construo. Meu objetivo é me desenvolver cada vez mais como fullstack, unindo conhecimento técnico, lógica e criatividade para entregar aplicações úteis, eficientes e com impacto real.</p>
               </div>
-              <div>
-                <h3>Linha do tempo</h3>
-                <div>
-                  {experiencias.map((exp, index) => (
-                    <div key={index} >
-                      <div
-                      />
-                      <div
-
-                      >
-                        {exp.data}
-                      </div>
-                      <h4
-
-                      >
-                        {exp.titulo}
-                      </h4>
-                      <p
-
-                      >
-                        {exp.descricao}
-                      </p>
+            </div>
+            
+            <div className="lg:w-1/3">
+              <h3 
+                className="text-2xl font-bold mb-8"
+                style={{ color: 'var(--primary)' }}
+              >
+                Linha do Tempo
+              </h3>
+              
+              <div className="space-y-8">
+                {experiencias.map((exp, index) => (
+                  <div 
+                    key={index}
+                    className="pb-8 border-l-2 pl-6 relative"
+                    style={{ 
+                      borderColor: 'var(--accent)',
+                    }}
+                  >
+                    <div 
+                      className="absolute -left-[9px] top-0 w-4 h-4 rounded-full"
+                      style={{ 
+                        backgroundColor: 'var(--accent)',
+                        border: '2px solid var(--bg-primary)'
+                      }}
+                    />
+                    <div 
+                      className="text-sm mb-2"
+                      style={{ color: 'var(--accent)' }}
+                    >
+                      {exp.data}
                     </div>
-                  ))}
-                </div>
+                    <h4 
+                      className="text-lg font-semibold mb-2"
+                      style={{ color: 'var(--primary)' }}
+                    >
+                      {exp.titulo}
+                    </h4>
+                    <p 
+                      className="text-sm"
+                      style={{ color: 'var(--text-secondary)' }}
+                    >
+                      {exp.descricao}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
