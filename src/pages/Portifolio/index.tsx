@@ -155,15 +155,15 @@ const Portifolio = () => {
         </div>
       </header>
 
-     <section className="pt-32 pb-20 min-h-screen flex items-center relative w-full">
+      <section className="pt-32 pb-20 min-h-screen flex items-center relative w-full">
         <div className="w-full px-6 lg:px-12 xl:px-20">
           <div className="w-full">
             <div className="flex flex-col lg:flex-row items-start lg:items-center w-full gap-12">
-                <img
-                  src={MinhaFoto}
-                  alt="Minha Foto"
-                  className="rounded-full w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 object-cover"
-                />
+              <img
+                src={MinhaFoto}
+                alt="Minha Foto"
+                className="rounded-full w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 object-cover"
+              />
 
               <div className="lg:w-2/3 order-2 lg:order-2">
                 <span
@@ -225,13 +225,27 @@ const Portifolio = () => {
         </div>
       </section>
 
-      <section>
-        <div>
-          <div>
-            <h2>Projetos Desenvolvidos</h2>
-            <p>Desenvolvo projetos que combinam tecnologia, design e resolução de problemas reais. Busco criar soluções funcionais, organizadas e centradas no usuário, aplicando práticas de desenvolvimento modernas e mantendo sempre um olhar crítico sobre experiência, acessibilidade e desempenho.</p>
+      <section
+        id="work"
+        className="py-24 w-full"
+        style={{ backgroundColor: 'var(--bg-secondary)' }}
+      >
+        <div className="w-full px-6 lg:px-12 xl:px-20">
+          <div className="mb-20">
+            <h2
+              className="text-4xl lg:text-5xl font-bold mb-4"
+              style={{ color: 'var(--primary)' }}
+            >
+              Projetos Desenvolvidos
+            </h2>
+            <p
+              className="text-lg max-w-8xl"
+              style={{ color: 'var(--text-secondary)' }}
+            >
+              Desenvolvo projetos que combinam tecnologia, design e resolução de problemas reais. Busco criar soluções funcionais, organizadas e centradas no usuário, aplicando práticas de desenvolvimento modernas e mantendo sempre um olhar crítico sobre experiência, acessibilidade e desempenho.
+            </p>
           </div>
-          <div >
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-10" >
             {projetos.map((projeto, index) => (
               <CardProjeto key={index} project={projeto} />
             ))}

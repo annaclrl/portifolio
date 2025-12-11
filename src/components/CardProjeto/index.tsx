@@ -23,14 +23,14 @@ const CardProjeto = ({ project }: Props) => {
 
       <div className="p-8">
         <h3
-          className="text-xl font-semibold mb-2"
+          className="text-2xl font-semibold mb-2"
           style={{ color: 'var(--primary)' }}
         >
           {project.titulo}
         </h3>
 
         <p
-          className="text-sm mb-6"
+          className="text-md mb-6"
           style={{ color: 'var(--text-secondary)' }}
         >
           {project.descricao}
