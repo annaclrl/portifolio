@@ -3,6 +3,8 @@ import Logo from '../../assets/logo.png'
 import MinhaFoto from '../../assets/minha-foto.png'
 import { useEffect, useState } from "react";
 import { useTheme } from "../../context/ThemeContext";
+import CardProjeto from "../../components/CardProjeto";
+import { projetos } from "../../data/cardProjeto";
 
 const Portifolio = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -220,6 +222,20 @@ const Portifolio = () => {
         >
           Role para explorar
           <div className="w-px h-10" style={{ backgroundColor: 'var(--accent)' }} />
+        </div>
+      </section>
+
+      <section>
+        <div>
+          <div>
+            <h2>Projetos Desenvolvidos</h2>
+            <p>Desenvolvo projetos que combinam tecnologia, design e resolução de problemas reais. Busco criar soluções funcionais, organizadas e centradas no usuário, aplicando práticas de desenvolvimento modernas e mantendo sempre um olhar crítico sobre experiência, acessibilidade e desempenho.</p>
+          </div>
+          <div >
+            {projetos.map((projeto, index) => (
+              <CardProjeto key={index} project={projeto} />
+            ))}
+          </div>
         </div>
       </section>
     </div>
