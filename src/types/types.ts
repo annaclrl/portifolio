@@ -18,3 +18,15 @@ export interface Experiencia {
   descricao: string;
 }
 
+export interface Skill {
+  name: string;
+  level: string;
+  percentage: number;
+  tags: string[];
+}
+
+export interface SkillType {
+  titulo: string;
+  icone: string;
+  skills: Skill[];
+}

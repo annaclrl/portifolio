@@ -7,6 +7,7 @@ import CardProjeto from "../../components/CardProjeto";
 import { projetos } from "../../data/cardProjeto";
 import { experiencias } from "../../data/expericenica";
 
+
 const Portifolio = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -253,6 +254,7 @@ const Portifolio = () => {
           </div>
         </div>
       </section>
+
       <section id="about" className="py-24 w-full">
         <div className="w-full px-6 lg:px-12 xl:px-20">
           <div className="flex flex-col lg:flex-row gap-16">
@@ -324,6 +326,7 @@ const Portifolio = () => {
           </div>
         </div>
       </section>
+
     </div>
   )
 };
