@@ -31,22 +31,75 @@ const CardSkill = ({ category }: SkillProps) => {
   }, []);
 
   return (
-    <div ref={skillRef} data-visible={isVisible}>
-      <div>
-        <div>
+    <div 
+      ref={skillRef}
+      className="border border-solid rounded-lg p-8 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md hover:border-accent bg-bg-primary"
+      style={{ 
+        borderColor: 'var(--border)',
+        boxShadow: 'var(--shadow-sm)',
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+      }}
+    >
+      <div className="flex items-center gap-4 mb-8">
+        <div 
+          className="w-10 h-10 rounded-md flex items-center justify-center text-white text-xl"
+          style={{
+            background: 'linear-gradient(135deg, var(--accent), var(--primary))'
+          }}
+        >
           {category.icone}
         </div>
-        <h3>{category.titulo}</h3>
+        <h3 
+          className="text-lg font-semibold"
+          style={{ color: 'var(--primary)' }}
+        >
+          {category.titulo}
+        </h3>
       </div>
-
-      <div>
+      
+      <div className="space-y-6">
         {category.skills.map((skill, index) => (
-          <div key={index}>
-            <span>{skill.name}</span>
-
-            <div>
+          <div key={index} className="space-y-2">
+            <div className="flex justify-between items-center">
+              <span 
+                className="text-sm font-medium"
+                style={{ color: 'var(--primary)' }}
+              >
+                {skill.name}
+              </span>
+              <span 
+                className="text-xs uppercase tracking-wider"
+                style={{ color: 'var(--accent)' }}
+              >
+                {skill.level}
+              </span>
+            </div>
+            
+            <div 
+              className="h-1 rounded-full overflow-hidden"
+              style={{ backgroundColor: 'var(--bg-secondary)' }}
+            >
+              <div 
+                className="h-full rounded-full transition-all duration-1000 ease-out"
+                style={{
+                  background: 'linear-gradient(90deg, var(--accent), var(--primary))',
+                  width: isVisible ? `${skill.percentage}%` : '0%'
+                }}
+              />
+            </div>
+            
+            <div className="flex flex-wrap gap-2 pt-2">
               {skill.tags.map((tag, tagIndex) => (
-                <span key={tagIndex}>
+                <span 
+                  key={tagIndex}
+                  className="text-xs px-2 py-1 rounded-sm border"
+                  style={{
+                    backgroundColor: 'var(--bg-secondary)',
+                    color: 'var(--text-secondary)',
+                    borderColor: 'var(--border)'
+                  }}
+                >
                   {tag}
                 </span>
               ))}
