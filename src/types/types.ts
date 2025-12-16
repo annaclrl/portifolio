@@ -19,9 +19,7 @@ export interface Experiencia {
 }
 
 export interface Skill {
-  name: string;
-  level: string;
-  percentage: number;
+  nome: string;
   tags: string[];
 }
 

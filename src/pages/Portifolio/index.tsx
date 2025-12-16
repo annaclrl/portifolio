@@ -6,6 +6,8 @@ import { useTheme } from "../../context/ThemeContext";
 import CardProjeto from "../../components/CardProjeto";
 import { projetos } from "../../data/cardProjeto";
 import { experiencias } from "../../data/expericenica";
+import CardSkill from "../../components/CardSkill";
+import { skills } from "../../data/cardSkill";
 
 
 const Portifolio = () => {
@@ -327,6 +329,24 @@ const Portifolio = () => {
         </div>
       </section>
 
+      <section>
+        <div>
+          <div>
+            <h2>
+              Minhas Skills
+            </h2>
+            <p>
+              Competências técnicas organizadas por categoria. Dominio completo do ciclo de desenvolvimento back-end.
+            </p>
+          </div>
+          
+          <div>
+            {skills.map((category, index) => (
+              <CardSkill key={index} category={category} />
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   )
 };

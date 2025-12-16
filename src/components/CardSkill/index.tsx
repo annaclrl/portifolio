@@ -66,27 +66,8 @@ const CardSkill = ({ category }: SkillProps) => {
                 className="text-sm font-medium"
                 style={{ color: 'var(--primary)' }}
               >
-                {skill.name}
+                {skill.nome}
               </span>
-              <span 
-                className="text-xs uppercase tracking-wider"
-                style={{ color: 'var(--accent)' }}
-              >
-                {skill.level}
-              </span>
-            </div>
-            
-            <div 
-              className="h-1 rounded-full overflow-hidden"
-              style={{ backgroundColor: 'var(--bg-secondary)' }}
-            >
-              <div 
-                className="h-full rounded-full transition-all duration-1000 ease-out"
-                style={{
-                  background: 'linear-gradient(90deg, var(--accent), var(--primary))',
-                  width: isVisible ? `${skill.percentage}%` : '0%'
-                }}
-              />
             </div>
             
             <div className="flex flex-wrap gap-2 pt-2">
