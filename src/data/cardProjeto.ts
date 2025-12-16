@@ -1,6 +1,6 @@
 import type { Projeto } from "../types/types";
-import imgJps from "../assets/imagem-jps.png";
-import imgNeuron from "../assets/imagem-neuron.png";
+import imgJps from "../assets/image/imagem-jps.png";
+import imgNeuron from "../assets/image/imagem-neuron.png";
 
 export const projetos: Projeto[] = [
     {

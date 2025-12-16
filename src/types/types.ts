@@ -25,6 +25,6 @@ export interface Skill {
 
 export interface SkillType {
   titulo: string;
-  icone: string;
+  icon: string;
   skills: Skill[];
 }

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import Logo from '../../assets/logo.png'
-import MinhaFoto from '../../assets/minha-foto.png'
+import Logo from '../../assets/image/logo.png'
+import MinhaFoto from '../../assets/image/minha-foto.png'
 import { useEffect, useState } from "react";
 import { useTheme } from "../../context/ThemeContext";
 import CardProjeto from "../../components/CardProjeto";
@@ -329,18 +329,28 @@ const Portifolio = () => {
         </div>
       </section>
 
-      <section>
-        <div>
-          <div>
-            <h2>
+      <section 
+        id="skills" 
+        className="py-24 w-full"
+        style={{ backgroundColor: 'var(--bg-secondary)' }}
+      >
+        <div className="w-full px-6 lg:px-12 xl:px-20">
+          <div className="mb-20">
+            <h2 
+              className="text-4xl lg:text-5xl font-bold mb-4"
+              style={{ color: 'var(--primary)' }}
+            >
               Minhas Skills
             </h2>
-            <p>
+            <p 
+              className="text-lg max-w-4xl"
+              style={{ color: 'var(--text-secondary)' }}
+            >
               Competências técnicas organizadas por categoria. Dominio completo do ciclo de desenvolvimento back-end.
             </p>
           </div>
           
-          <div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
             {skills.map((category, index) => (
               <CardSkill key={index} category={category} />
             ))}
