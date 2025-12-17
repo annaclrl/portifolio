@@ -8,17 +8,8 @@ import { projetos } from "../../data/cardProjeto";
 import { experiencias } from "../../data/expericenica";
 import CardSkill from "../../components/CardSkill";
 import { skills } from "../../data/cardSkill";
-import type { ContactItem } from "../../types/types";
-
-  // Contatos
-  const contactItems: ContactItem[] = [
-    { icon: "✉️", title: "Email", content: "anna.clara@example.com" },
-    { icon: "📍", title: "Localização", content: "São Paulo, Brasil" },
-    { icon: "💼", title: "Disponibilidade", content: "Aberto a oportunidades" }
-  ];
-
-  // Social links
-  const socialLinks = ["GitHub", "LinkedIn", "Instagram"];
+import type { ContatoItem } from "../../types/types";
+import { contatoItem } from "../../data/contato";
 
 const Portifolio = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -271,14 +262,14 @@ const Portifolio = () => {
         <div className="w-full px-6 lg:px-12 xl:px-20">
           <div className="flex flex-col lg:flex-row gap-16">
             <div className="lg:w-2/3">
-              <h2 
+              <h2
                 className="text-4xl lg:text-5xl font-bold mb-8"
                 style={{ color: 'var(--primary)' }}
               >
                 Sobre Mim
               </h2>
-              
-              <div 
+
+              <div
                 className="text-lg space-y-6"
                 style={{ color: 'var(--text-secondary)' }}
               >
@@ -288,44 +279,44 @@ const Portifolio = () => {
                 <p>Sou uma pessoa organizada, curiosa e sempre em busca de crescimento. Prezo por clareza, propósito e qualidade em tudo que construo. Meu objetivo é me desenvolver cada vez mais como fullstack, unindo conhecimento técnico, lógica e criatividade para entregar aplicações úteis, eficientes e com impacto real.</p>
               </div>
             </div>
-            
+
             <div className="lg:w-1/3">
-              <h3 
+              <h3
                 className="text-2xl font-bold mb-8"
                 style={{ color: 'var(--primary)' }}
               >
                 Linha do Tempo
               </h3>
-              
+
               <div className="space-y-8">
                 {experiencias.map((exp, index) => (
-                  <div 
+                  <div
                     key={index}
                     className="pb-8 border-l-2 pl-6 relative"
-                    style={{ 
+                    style={{
                       borderColor: 'var(--accent)',
                     }}
                   >
-                    <div 
+                    <div
                       className="absolute -left-[9px] top-0 w-4 h-4 rounded-full"
-                      style={{ 
+                      style={{
                         backgroundColor: 'var(--accent)',
                         border: '2px solid var(--bg-primary)'
                       }}
                     />
-                    <div 
+                    <div
                       className="text-sm mb-2"
                       style={{ color: 'var(--accent)' }}
                     >
                       {exp.data}
                     </div>
-                    <h4 
+                    <h4
                       className="text-lg font-semibold mb-2"
                       style={{ color: 'var(--primary)' }}
                     >
                       {exp.titulo}
                     </h4>
-                    <p 
+                    <p
                       className="text-sm"
                       style={{ color: 'var(--text-secondary)' }}
                     >
@@ -339,27 +330,27 @@ const Portifolio = () => {
         </div>
       </section>
 
-      <section 
-        id="skills" 
+      <section
+        id="skills"
         className="py-24 w-full"
         style={{ backgroundColor: 'var(--bg-secondary)' }}
       >
         <div className="w-full px-6 lg:px-12 xl:px-20">
           <div className="mb-20">
-            <h2 
+            <h2
               className="text-4xl lg:text-5xl font-bold mb-4"
               style={{ color: 'var(--primary)' }}
             >
               Minhas Skills
             </h2>
-            <p 
+            <p
               className="text-lg max-w-4xl"
               style={{ color: 'var(--text-secondary)' }}
             >
               Competências técnicas organizadas por categoria. Dominio completo do ciclo de desenvolvimento back-end.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
             {skills.map((category, index) => (
               <CardSkill key={index} category={category} />
@@ -367,6 +358,56 @@ const Portifolio = () => {
           </div>
         </div>
       </section>
+
+      <section id="contact">
+        <div>
+          <div>
+            <h2>Vamos Conversar</h2>
+            <p>
+              Disponível para oportunidades e conversas sobre tecnologia. Vamos criar algo incrível juntos.
+            </p>
+          </div>
+
+          <div>
+            <div>
+              <div>
+                {contatoItem.map((item, index) => (
+                  <div key={index}>
+                    <div>
+                      {item.icone}
+                    </div>
+                    <div>
+                      <h3>{item.titulo}</h3>
+                      <div>{item.conteudo}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <div>
+                <h3>Conecte-se</h3>
+                <p>
+                  Siga-me nas redes sociais para acompanhar meus projetos e insights sobre tecnologia.
+                </p>
+              </div>
+              <div>
+                <Link to="https://github.com/annaclrl" target="_blank" rel="noopener noreferrer">
+                  <span>GitHub</span>
+                  <span>→</span>
+                </Link>
+
+                <Link to="https://www.linkedin.com/in/annaclararussoluca/" target="_blank" rel="noopener noreferrer">
+                  <span>LinkedIn</span>
+                  <span>→</span>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </div>
   )
 };
