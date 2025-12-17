@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import type { Projeto } from "../../types/types";
 
 interface Props {
@@ -54,33 +55,37 @@ const CardProjeto = ({ project }: Props) => {
         
         <div className="flex gap-4">
 
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-md border transition-all duration-150 hover:border-accent hover:text-accent"
-            style={{
-              borderColor: 'var(--border)',
-              color: 'var(--text-primary)',
-              backgroundColor: 'var(--bg-primary)',
-            }}
-          >
-            Link
-          </a>
+          {project.link && (
+            <Link
+              to={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-md border transition-all duration-150 hover:border-accent hover:text-accent"
+              style={{
+                borderColor: 'var(--border)',
+                color: 'var(--text-primary)',
+                backgroundColor: 'var(--bg-primary)',
+              }}
+            >
+              Link
+            </Link>
+          )}
 
-          <a
-            href={project.codigo}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-md border transition-all duration-150 hover:border-accent hover:text-accent"
-            style={{
-              borderColor: 'var(--border)',
-              color: 'var(--text-primary)',
-              backgroundColor: 'var(--bg-primary)',
-            }}
-          >
-            Código 
-          </a>
+          {project.codigo && (
+            <Link
+              to={project.codigo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-md border transition-all duration-150 hover:border-accent hover:text-accent"
+              style={{
+                borderColor: 'var(--border)',
+                color: 'var(--text-primary)',
+                backgroundColor: 'var(--bg-primary)',
+              }}
+            >
+              Código 
+            </Link>
+          )}
 
         </div>
       </div>

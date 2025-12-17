@@ -18,7 +18,7 @@ export const projetos: Projeto[] = [
     descricao: "Juntos Pela Saúde é um sistema desenvolvido para auxiliar pacientes com baixa afinidade digital no agendamento e realização de teleconsultas.",
     tech: ["Java", "Quarkus", "SQLOracle"],
     imagem: imgJpsBack,
-    link: "https://github.com/annaclrl/juntos-pela-saude-java-api"
+    codigo: "https://github.com/annaclrl/juntos-pela-saude-java-api"
   },
   {
     titulo: "Neuron - Front-end",
@@ -33,6 +33,6 @@ export const projetos: Projeto[] = [
     descricao: "Neuron é uma plataforma web desenvolvida para promover o bem-estar emocional de colaboradores no ambiente corporativo.",
     tech: ["Java", "Quarkus", "SQLOracle"],
     imagem: imgNeuronBack,
-    link: "https://github.com/Duartegdm/NeuronAPI",
+    codigo: "https://github.com/Duartegdm/NeuronAPI",
   },
 ];

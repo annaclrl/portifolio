@@ -8,8 +8,8 @@ export interface Projeto {
   descricao: string;
   tech: string[];
   imagem: string;
-  link: string;    
-  codigo?: string;  
+  link?: string;    
+  codigo: string;  
 }
 
 export interface Experiencia {
