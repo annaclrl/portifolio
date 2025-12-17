@@ -8,7 +8,6 @@ import { projetos } from "../../data/cardProjeto";
 import { experiencias } from "../../data/expericenica";
 import CardSkill from "../../components/CardSkill";
 import { skills } from "../../data/cardSkill";
-import type { ContatoItem } from "../../types/types";
 import { contatoItem } from "../../data/contato";
 
 const Portifolio = () => {
@@ -54,13 +53,8 @@ const Portifolio = () => {
       >
         <div className="w-full px-6 lg:px-12 xl:px-20">
           <div className="flex justify-between items-center">
-            <Link
-              to="#"
-              className="text-xl font-bold"
-              style={{ color: 'var(--primary)' }}
-            >
-              <img src={Logo} alt="Logo" />
-            </Link>
+
+            <img src={Logo} alt="Logo" />
 
             {/* Mobile Menu */}
             <button
@@ -359,26 +353,64 @@ const Portifolio = () => {
         </div>
       </section>
 
-      <section id="contact">
-        <div>
-          <div>
-            <h2>Vamos Conversar</h2>
-            <p>
+      <section id="contact" className="py-24 w-full">
+        <div className="w-full px-6 lg:px-12 xl:px-20">
+
+          <div className="mb-20">
+            <h2
+              className="text-4xl lg:text-5xl font-bold mb-4"
+              style={{ color: 'var(--primary)' }}
+            >
+              Vamos Conversar
+            </h2>
+            <p
+              className="text-lg max-w-3xl"
+              style={{ color: 'var(--text-secondary)' }}
+            >
               Disponível para oportunidades e conversas sobre tecnologia. Vamos criar algo incrível juntos.
             </p>
           </div>
 
-          <div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+
             <div>
-              <div>
+              <div className="space-y-8">
                 {contatoItem.map((item, index) => (
-                  <div key={index}>
-                    <div>
-                      {item.icone}
+                  <div
+                    key={index}
+                    className="flex items-center gap-6 p-6 border rounded-lg "
+                    style={{
+                      borderColor: 'var(--border)',
+                      backgroundColor: 'var(--bg-primary)'
+                    }}
+                  >
+                    <div
+                      className="w-14 h-14 rounded-lg flex items-center justify-center"
+                      style={{
+                        background: 'var(--accent)'
+                      }}
+                    >
+                      <img
+                        src={item.icone}
+                        alt={item.titulo}
+                        className="w-6 h-6"
+                      />
                     </div>
+
                     <div>
-                      <h3>{item.titulo}</h3>
-                      <div>{item.conteudo}</div>
+                      <h3
+                        className="text-sm uppercase tracking-widest mb-1"
+                        style={{ color: 'var(--text-secondary)' }}
+                      >
+                        {item.titulo}
+                      </h3>
+                      <div
+                        className="text-xl font-semibold"
+                        style={{ color: 'var(--primary)' }}
+                      >
+                        {item.conteudo}
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -386,27 +418,75 @@ const Portifolio = () => {
             </div>
 
             <div>
-              <div>
-                <h3>Conecte-se</h3>
-                <p>
+              <div
+                className="p-8 rounded-xl"
+                style={{
+                  backgroundColor: 'var(--bg-secondary)',
+                  border: '1px solid var(--border)'
+                }}
+              >
+                <h3
+                  className="text-2xl font-bold mb-6"
+                  style={{ color: 'var(--primary)' }}
+                >
+                  Conecte-se
+                </h3>
+
+                <p
+                  className="mb-8"
+                  style={{ color: 'var(--text-secondary)' }}
+                >
                   Siga-me nas redes sociais para acompanhar meus projetos e insights sobre tecnologia.
                 </p>
-              </div>
-              <div>
-                <Link to="https://github.com/annaclrl" target="_blank" rel="noopener noreferrer">
-                  <span>GitHub</span>
-                  <span>→</span>
-                </Link>
 
-                <Link to="https://www.linkedin.com/in/annaclararussoluca/" target="_blank" rel="noopener noreferrer">
-                  <span>LinkedIn</span>
-                  <span>→</span>
-                </Link>
+                <div className="flex flex-wrap gap-4">
+                  <Link
+                    to="https://github.com/annaclrl"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-3 text-sm uppercase tracking-widest px-8 py-4 border rounded-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:text-accent hover:border-accent group"
+                    style={{
+                      color: 'var(--text-secondary)',
+                      borderColor: 'var(--border)',
+                      backgroundColor: 'var(--bg-primary)'
+                    }}
+                  >
+                    <span>GitHub</span>
+                    <span
+                      className="group-hover:translate-x-1 transition-transform duration-300"
+                      style={{ color: 'var(--accent)' }}
+                    >
+                      →
+                    </span>
+                  </Link>
+
+                  <Link
+                    to="https://www.linkedin.com/in/annaclararussoluca/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-3 text-sm uppercase tracking-widest px-8 py-4 border rounded-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:text-accent hover:border-accent group"
+                    style={{
+                      color: 'var(--text-secondary)',
+                      borderColor: 'var(--border)',
+                      backgroundColor: 'var(--bg-primary)'
+                    }}
+                  >
+                    <span>LinkedIn</span>
+                    <span
+                      className="group-hover:translate-x-1 transition-transform duration-300"
+                      style={{ color: 'var(--accent)' }}
+                    >
+                      →
+                    </span>
+                  </Link>
+                </div>
               </div>
             </div>
+
           </div>
         </div>
       </section>
+
 
     </div>
   )

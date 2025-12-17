@@ -9,7 +9,7 @@ export interface Projeto {
   tech: string[];
   imagem: string;
   link: string;    
-  codigo: string;  
+  codigo?: string;  
 }
 
 export interface Experiencia {
