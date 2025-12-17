@@ -1,4 +1,4 @@
-import type { Projeto } from "../types/types";
+import type { Projeto } from "../types/projeto";
 import imgJps from "../assets/image/imagem-jps.png";
 import imgNeuron from "../assets/image/imagem-neuron.png";
 import imgJpsBack from "../assets/image/imagem-jps-back.png";

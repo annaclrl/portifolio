@@ -1,4 +1,4 @@
-import type { Experiencia } from "../types/types";
+import type { Experiencia } from "../types/experiencia";
 
 export const experiencias: Experiencia[] = [
     { data: "Abril de 2025 — Agosto de 2025", titulo: "Jovem Aprendiz", descricao: "Porto · Atendimento ao cliente - Cartão de crédito N1." },

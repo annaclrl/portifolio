@@ -1,4 +1,4 @@
-import type { SkillType as SkillType } from '../../types/types';
+import type { SkillType as SkillType } from '../../types/skill';
 
 interface SkillProps {
   category: SkillType;

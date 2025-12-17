@@ -1,4 +1,4 @@
-import type { ContatoItem } from "../types/types";
+import type { ContatoItem } from "../types/contato";
 import Email from "../assets/icon/icon-email.png";
 import Localizacao from "../assets/icon/icon-localizacao.png";
 

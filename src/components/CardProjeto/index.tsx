@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import type { Projeto } from "../../types/types";
+import type { Projeto } from "../../types/projeto";
 
 interface Props {
   project: Projeto;
