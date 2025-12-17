@@ -28,3 +28,9 @@ export interface SkillType {
   icon: string;
   skills: Skill[];
 }
+
+export type ContatoItem = {
+  icone: string;
+  titulo: string;
+  conteudo: string;
+}

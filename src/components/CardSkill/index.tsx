@@ -18,7 +18,7 @@ const CardSkill = ({ category }: SkillProps) => {
         <div
           className="w-10 h-10 rounded-md flex items-center justify-center"
           style={{
-            background: 'linear-gradient(135deg, var(--accent), var(--primary))'
+            background: 'var(--accent)'
           }}
         >
           <img

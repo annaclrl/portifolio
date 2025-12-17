@@ -8,7 +8,17 @@ import { projetos } from "../../data/cardProjeto";
 import { experiencias } from "../../data/expericenica";
 import CardSkill from "../../components/CardSkill";
 import { skills } from "../../data/cardSkill";
+import type { ContactItem } from "../../types/types";
 
+  // Contatos
+  const contactItems: ContactItem[] = [
+    { icon: "✉️", title: "Email", content: "anna.clara@example.com" },
+    { icon: "📍", title: "Localização", content: "São Paulo, Brasil" },
+    { icon: "💼", title: "Disponibilidade", content: "Aberto a oportunidades" }
+  ];
+
+  // Social links
+  const socialLinks = ["GitHub", "LinkedIn", "Instagram"];
 
 const Portifolio = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

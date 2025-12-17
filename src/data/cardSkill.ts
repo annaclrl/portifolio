@@ -33,7 +33,7 @@ export const skills = [
     titulo: "Banco de Dados",
     icon: Database,
     skills: [
-      { nome: "SQL", tags: ["Modelagem", "DML", "DDL", "DRS"] }
+      { nome: "SQL", tags: ["Modelagem", "DML", "DDL", "DRS", "Oracle"] }
     ]
   }
 ];
